@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    let dice = $state(0);
+
+    $effect(() => {
+        console.log(dice);
+    })
+</script>
+
+{dice} is the number in question
+<button class="btn" on:click={() => (dice = Math.ceil(Math.random() * 6))}>
+    Click me
+</button>
